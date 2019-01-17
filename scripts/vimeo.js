@@ -486,7 +486,7 @@ H5P.VideoVimeo = (function ($) {
    * @param {Array} sources
    * @returns {Boolean}
    */
-  YouTube.canPlay = function (sources) {
+  Vimeo.canPlay = function (sources) {
     return getId(sources[0].path);
   };
 
@@ -549,9 +549,9 @@ H5P.VideoVimeo = (function ($) {
   ORIGIN = !ORIGIN || ORIGIN[0] === undefined ? undefined : ORIGIN[0];
   // ORIGIN = undefined is needed to support fetching file from device local storage
 
-  return YouTube;
+  return Vimeo;
 })(H5P.jQuery);
 
 // Register video handler
 H5P.videoHandlers = H5P.videoHandlers || [];
-H5P.videoHandlers.push(H5P.VideoYouTube);
+H5P.videoHandlers.push(H5P.VideoVimeo);
