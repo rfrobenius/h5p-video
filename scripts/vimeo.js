@@ -1,20 +1,20 @@
 /** @namespace H5P */
-H5P.VideoYouTube = (function ($) {
+H5P.VideoVimeo = (function ($) {
 
   /**
-   * YouTube video player for H5P.
+   * Vimeo video player for H5P, based on YouTube functions.
    *
    * @class
    * @param {Array} sources Video files to use
    * @param {Object} options Settings for the player
    * @param {Object} l10n Localization strings
    */
-  function YouTube(sources, options, l10n) {
+  function Vimeo(sources, options, l10n) {
     var self = this;
 
     var player;
     var playbackRate = 1;
-    var id = 'h5p-youtube-' + numInstances;
+    var id = 'h5p-vimeo-' + numInstances;
     numInstances++;
 
     var $wrapper = $('<div/>');
@@ -27,7 +27,7 @@ H5P.VideoYouTube = (function ($) {
     // var $placeholder = $('<iframe id="' + id + '" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/' + getId(sources[0].path) + '?enablejsapi=1&origin=' + encodeURIComponent(ORIGIN) + '&autoplay=' + (options.autoplay ? 1 : 0) + '&controls=' + (options.controls ? 1 : 0) + '&disabledkb=' + (options.controls ? 0 : 1) + '&fs=0&loop=' + (options.loop ? 1 : 0) + '&rel=0&showinfo=0&iv_load_policy=3" frameborder="0"></iframe>').appendTo($wrapper);
 
     /**
-     * Use the YouTube API to create a new player
+     * Use the Vimeo API to create a new player
      *
      * @private
      */
@@ -36,12 +36,12 @@ H5P.VideoYouTube = (function ($) {
         return;
       }
 
-      if (window.YT === undefined) {
+      if (window.Vimeo === undefined) {
         // Load API first
         loadAPI(create);
         return;
       }
-      if (YT.Player === undefined) {
+      if (Vimeo.Player === undefined) {
         return;
       }
 
@@ -54,7 +54,7 @@ H5P.VideoYouTube = (function ($) {
 
       var videoId = getId(sources[0].path);
 
-      player = new YT.Player(id, {
+      player = new Vimeo.Player(id, {
         width: width,
         height: width * (9/16),
         videoId: videoId,
@@ -164,7 +164,7 @@ H5P.VideoYouTube = (function ($) {
     * @param {jQuery} $container
     */
     self.appendTo = function ($container) {
-      $container.addClass('h5p-youtube').append($wrapper);
+      $container.addClass('h5p-vimeo').append($wrapper);
       create();
     };
 
