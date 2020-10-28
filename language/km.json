@@ -38,56 +38,56 @@
       "fields": [
         {
           "label": "Name",
-          "default": "Video",
+          "default": "វីដេអូ",
           "description": "Helps identify content of this type."
         },
         {
           "label": "Loading",
-          "default": "Video player loading..."
+          "default": "កម្មវិធីលេងវីដេអូកំពុងដំណើរការ..."
         },
         {
           "label": "No players found",
-          "default": "Found no video players that supports the given video format."
+          "default": "រកមិនឃើញកម្មវិធីដែលអាចលេងប្រភេទវីដេអូដែលបានបញ្ចូល។"
         },
         {
           "label": "No sources",
-          "default": "Video is missing sources."
+          "default": "មិនមានឯកសារវីដេអូ"
         },
         {
           "label": "Aborted",
-          "default": "Media playback has been aborted."
+          "default": "ការលេងមេឌាត្រូវបានបោះបង់។"
         },
         {
           "label": "Network failure",
-          "default": "Network failure."
+          "default": "បណ្តាញបរាជ័យ"
         },
         {
           "label": "Cannot decode video source",
-          "default": "Unable to decode media."
+          "default": "មិនអាចបម្លែងមេឌាបាន"
         },
         {
           "label": "Format not supported",
-          "default": "Video format not supported."
+          "default": "ប្រភេទវីដេអូមិនត្រូវបានគាំទ្រ"
         },
         {
           "label": "Media encrypted",
-          "default": "Media encrypted."
+          "default": "មេឌាត្រូវបានអ៊ីនគ្រីប"
         },
         {
           "label": "Unknown error",
-          "default": "Unknown error."
+          "default": "មិនដឹងមានបញ្ហាអី"
         },
         {
           "label": "Invalid YouTube ID",
-          "default": "Invalid YouTube ID."
+          "default": "ID យូធូបមិនត្រឹមត្រូវ។"
         },
         {
           "label": "Unknown YouTube ID",
-          "default": "Unable to find video with the given YouTube ID."
+          "default": "រកមិនឃើញវីដេអូដែលត្រូវ ID ដែលបានបញ្ចូល។"
         },
         {
           "label": "Restricted YouTube video",
-          "default": "The owner of this video does not allow it to be embedded."
+          "default": "ម្ចាស់វីដេអូនេះមិនអនុញ្ញាតឲ្យគេបង្កប់វីដេអូនេះក្នុងវេបសាយក្រៅពី YouTube ទេ។"
         }
       ]
     },

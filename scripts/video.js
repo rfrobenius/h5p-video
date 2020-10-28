@@ -14,6 +14,7 @@ H5P.Video = (function ($, ContentCopyrights, MediaCopyright, handlers) {
    */
   function Video(parameters, id) {
     var self = this;
+    self.contentId = id;
 
     // Ref youtube.js - ipad & youtube - issue
     self.pressToPlay = false;
@@ -30,7 +31,7 @@ H5P.Video = (function ($, ContentCopyrights, MediaCopyright, handlers) {
         name: 'Video',
         loading: 'Video player loading...',
         noPlayers: 'Found no video players that supports the given video format.',
-        noSources: 'Video is missing sources.',
+        noSources: 'Video source is missing.',
         aborted: 'Media playback has been aborted.',
         networkFailure: 'Network failure.',
         cannotDecode: 'Unable to decode media.',
@@ -55,7 +56,7 @@ H5P.Video = (function ($, ContentCopyrights, MediaCopyright, handlers) {
         var source = $.extend(true, {}, parameters.sources[i]);
 
         // Create working URL without html entities.
-        source.path = H5P.getPath($cleaner.html(source.path).text(), id);
+        source.path = $cleaner.html(source.path).text();
         sources.push(source);
       }
     }
@@ -68,7 +69,7 @@ H5P.Video = (function ($, ContentCopyrights, MediaCopyright, handlers) {
 
       // Create working URL without html entities
       if (clone.track && clone.track.path) {
-        clone.track.path = H5P.getPath($cleaner.html(clone.track.path).text(), id);
+        clone.track.path = $cleaner.html(clone.track.path).text();
         tracks.push(clone);
       }
     });
@@ -122,7 +123,7 @@ H5P.Video = (function ($, ContentCopyrights, MediaCopyright, handlers) {
             autoplay: parameters.playback.autoplay,
             loop: parameters.playback.loop,
             fit: parameters.visuals.fit,
-            poster: parameters.visuals.poster === undefined ? undefined : H5P.getPath(parameters.visuals.poster.path, id),
+            poster: parameters.visuals.poster === undefined ? undefined : parameters.visuals.poster,
             startAt: parameters.startAt || 0,
             tracks: tracks,
             disableRemotePlayback: (parameters.visuals.disableRemotePlayback || false)
@@ -144,7 +145,7 @@ H5P.Video = (function ($, ContentCopyrights, MediaCopyright, handlers) {
           autoplay: parameters.playback.autoplay,
           loop: parameters.playback.loop,
           fit: parameters.visuals.fit,
-          poster: parameters.visuals.poster === undefined ? undefined : H5P.getPath(parameters.visuals.poster.path, id),
+          poster: parameters.visuals.poster === undefined ? undefined : parameters.visuals.poster,
           startAt: parameters.startAt || 0,
           tracks: tracks,
           disableRemotePlayback: (parameters.visuals.disableRemotePlayback || false)

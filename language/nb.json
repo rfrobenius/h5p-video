@@ -5,7 +5,7 @@
       "description": "Formater som støttes er webm, mp4 og ogv."
     },
     {
-      "label": "Visuelt",
+      "label": "Visuelle egenskaper",
       "fields": [
         {
           "label": "Plakat"
@@ -82,7 +82,7 @@
           "default": "Ugyldig YouTube ID."
         },
         {
-          "label": "Ugyldig YouTube ID",
+          "label": "Ukjent YouTube ID",
           "default": "Finner ikke videoen med gitt YouTube ID."
         },
         {
@@ -122,7 +122,6 @@
               },
               {
                 "label": "Source language, must be defined for subtitles",
-                "default": "en",
                 "description": "Must be a valid BCP 47 language tag. If the kind attribute is set to subtitles, then srclang must be defined."
               },
               {
