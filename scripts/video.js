@@ -1,5 +1,5 @@
 /** @namespace H5P */
-H5P.Video = (function ($, ContentCopyrights, MediaCopyright, handlers) {
+H5P.VideoV = (function ($, ContentCopyrights, MediaCopyright, handlers) {
 
   /**
    * The ultimate H5P video player!
